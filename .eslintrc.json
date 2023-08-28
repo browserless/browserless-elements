@@ -1,0 +1,37 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "globals": {
+    "JSX": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["prettier"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always-and-inside-groups"
+      }
+    ],
+    "no-async-promise-executor": 0,
+    "no-control-regex": "off",
+    "@next/next/no-html-link-for-pages": "off",
+    "no-unused-vars": "warn",
+    "no-useless-escape": "off",
+    "no-return-await": "error",
+    "prettier/prettier": ["error", { "printWidth": 85, "trailingComma": "all" }],
+    "react/react-in-jsx-scope": "error",
+    "react/jsx-curly-brace-presence": [
+      "error",
+      { "props": "never", "children": "never" }
+    ]
+  }
+}

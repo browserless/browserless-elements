@@ -1,11 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
-import useTheme from '../hooks/useTheme';
-import { classNames } from '../utils';
+import React from "react";
+
+import useTheme from "../hooks/useTheme";
+import { classNames } from "../utils";
 
 const styles = {
-  light: 'bg-[#fcfcfc]',
-  dark: 'bg-[#313131]',
+  light: "bg-primary-light",
+  dark: "bg-primary-dark",
 };
 
 const Aside = (props: AsideProps) => {
@@ -17,9 +18,9 @@ const Aside = (props: AsideProps) => {
     <>
       <div
         className={classNames(
-          'h-screen w-[250px] fixed z-10 overflow-x-hidden',
+          "h-screen w-[250px] fixed z-10 overflow-x-hidden",
           additionalClassName,
-          colors
+          colors,
         )}
         {...otherProps}
       >

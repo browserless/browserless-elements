@@ -1,12 +1,14 @@
-import React from 'react';
-import useTheme from '../hooks/useTheme';
-import { classNames } from '../utils';
+import React from "react";
+
+import useTheme from "../hooks/useTheme";
+import { classNames } from "../utils";
+
+import Heading from "./Heading";
 
 const styles = {
-  base:
-    'fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2  z-50 p-3',
-  light: 'bg-white color-charcoal-800',
-  dark: 'bg-charcoal-700 text-white',
+  base: "fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2  z-50 p-3",
+  light: "bg-white color-charcoal-800",
+  dark: "bg-charcoal-700 text-white",
 };
 
 const Modal = (props: ModalProps) => {
@@ -17,7 +19,7 @@ const Modal = (props: ModalProps) => {
     closeOnBackdropClick = true,
     closeOnEsc = true,
     show = false,
-    width = '500px',
+    width = "500px",
     className: additionalClassName,
     ...otherProps
   } = props;
@@ -36,24 +38,26 @@ const Modal = (props: ModalProps) => {
   };
 
   return (
-    <div
-      className={classNames('top-0 left-0 z-20', isActive ? 'fixed' : 'hidden')}
-    >
+    <div className={classNames("top-0 left-0 z-20", isActive ? "fixed" : "hidden")}>
       <div
         className={classNames(
           styles.base,
           colors,
-          variant === 'round' && 'rounded-md',
-          additionalClassName
+          variant === "round" && "rounded-md",
+          additionalClassName,
         )}
         style={{ width }}
         {...otherProps}
       >
+        {title && <Heading size="md">Modal</Heading>}
         <div className="p-5">{children}</div>
       </div>
       <div
         className="fixed z-40 w-screen h-screen bg-black/40"
         onClick={closeOnBackdropClick ? handleClose : undefined}
+        onKeyUp={(event) => {
+          if (event.key === "Escape" && !closeOnEsc) onClose();
+        }}
       ></div>
     </div>
   );

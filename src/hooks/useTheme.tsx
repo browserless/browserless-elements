@@ -1,4 +1,5 @@
 import React from "react";
+
 import { ThemeContext } from "../providers/ThemeProvider";
 
 const useTheme = () => {
@@ -12,8 +13,8 @@ const useTheme = () => {
 
   return {
     theme: usedTheme,
-    variant: usedVariant
+    variant: usedVariant,
   };
-}
+};
 
 export default useTheme;

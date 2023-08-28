@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 export const defaultTheme = {
-  theme: 'light',
-  variant: 'round',
+  theme: "light",
+  variant: "round",
 };
 export const ThemeContext = React.createContext(defaultTheme);
 
@@ -13,14 +13,12 @@ const ThemeProvider = (props: ThemeProviderProps) => {
     variant: props.variant || defaultTheme.variant,
   });
 
-  return (
-    <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>;
 };
 
 export default ThemeProvider;
 export interface ThemeProviderProps {
   children: React.ReactNode;
-  theme?: 'light' | 'dark';
-  variant?: 'round' | 'solid';
+  theme?: "light" | "dark";
+  variant?: "round" | "solid";
 }

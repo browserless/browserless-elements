@@ -1,8 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import Heading from './Heading';
-import useTheme from '../hooks/useTheme';
-import { classNames } from '../utils';
+import useTheme from "../hooks/useTheme";
+import { classNames } from "../utils";
+
+import Heading from "./Heading";
 
 const AsideSection = (props: SectionProps) => {
   const { title, children } = props;
@@ -13,8 +14,8 @@ const AsideSection = (props: SectionProps) => {
       <Heading
         size="sm"
         className={classNames(
-          theme === 'dark' ? 'text-charcoal-100' : 'text-charcoal-500',
-          'pointer-events-none'
+          theme === "dark" ? "text-charcoal-100" : "text-charcoal-500",
+          "pointer-events-none",
         )}
       >
         {title}
@@ -25,6 +26,7 @@ const AsideSection = (props: SectionProps) => {
 };
 
 export default AsideSection;
-export interface SectionProps extends Omit<React.HTMLProps<HTMLDivElement>, "title"> {
+export interface SectionProps
+  extends Omit<React.HTMLProps<HTMLDivElement>, "title"> {
   title: string;
 }

@@ -1,13 +1,11 @@
-import React from 'react';
-import { classNames } from '../utils';
+import React from "react";
+
+import { classNames } from "../utils";
 
 const Loader = (props: LoaderProps): React.JSX.Element => {
   const { className: additionalClassName } = props;
   return (
-    <svg
-      className={classNames('spinner', additionalClassName)}
-      viewBox="0 0 50 50"
-    >
+    <svg className={classNames("spinner", additionalClassName)} viewBox="0 0 50 50">
       <circle
         className="path"
         cx="25"

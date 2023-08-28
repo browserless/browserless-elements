@@ -8,7 +8,7 @@ export function classNames(...args: any[]): string {
 
     const argType = typeof arg;
 
-    if (argType === 'string' || argType === 'number') {
+    if (argType === "string" || argType === "number") {
       classes.push(arg);
     } else if (Array.isArray(arg)) {
       if (arg.length) {
@@ -17,10 +17,10 @@ export function classNames(...args: any[]): string {
           classes.push(inner);
         }
       }
-    } else if (argType === 'object') {
+    } else if (argType === "object") {
       if (
         arg.toString !== Object.prototype.toString &&
-        !arg.toString.toString().includes('[native code]')
+        !arg.toString.toString().includes("[native code]")
       ) {
         classes.push(arg.toString());
         continue;
@@ -34,5 +34,5 @@ export function classNames(...args: any[]): string {
     }
   }
 
-  return classes.join(' ');
+  return classes.join(" ");
 }

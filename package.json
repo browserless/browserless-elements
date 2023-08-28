@@ -12,11 +12,13 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build && tailwindcss -i ./src/globals.css -o ./dist/elements.css",
+    "build": "tsdx build && tailwindcss -i ./src/globals.css -o ./dist/elements.css --minify",
+    "build-package": "npm run build && npm pack",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "lint": "eslint src --ext .ts,.tsx --fix",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "prettier": "prettier --config .prettierrc --write --log-level error \"src/**/*.{ts,tsx,css}\" tailwind.config.js"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -50,9 +52,16 @@
     "@types/node": "^20.4.9",
     "@types/react": "^18.2.19",
     "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/parser": "^6.5.0",
     "cssnano": "^6.0.1",
+    "eslint": "^8.48.0",
+    "eslint-config-next": "^13.4.19",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.3",
     "postcss": "^8.4.28",
+    "prettier": "^3.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "size-limit": "^8.2.6",

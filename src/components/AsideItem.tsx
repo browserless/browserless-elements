@@ -39,7 +39,7 @@ const AsideItem = (props: AsideItemProps) => {
         selected && colors.selected,
         loading && "!cursor-default animate-pulse",
         loading && variant === "round" && "!rounded-lg py-3",
-        additionalClassName
+        additionalClassName,
       )}
       {...otherProps}
     >
