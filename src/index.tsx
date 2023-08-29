@@ -6,6 +6,7 @@ export { default as Button } from "./components/Button";
 export { default as Content } from "./components/Content";
 export { default as Heading } from "./components/Heading";
 export { default as Input } from "./components/Input";
+export { default as Link } from "./components/Link";
 export { default as Loader } from "./components/Loader";
 export { default as Modal } from "./components/Modal";
 export { default as Page } from "./components/Page";

@@ -58,6 +58,7 @@ module.exports = {
           900: "#b66a1e",
         },
         "hot-pink": "#ff1a8c",
+        "hot-yellow": "#f8d022",
         metric: {
           ok: "#4cc790",
           warn: "#fda30c",
