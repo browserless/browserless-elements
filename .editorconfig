@@ -10,5 +10,5 @@ trim_trailing_whitespace = true
 spaces_around_operators = true
 
 [*.{ts,tsx}]
-quote_type = single
+quote_type = double
 curly_bracket_next_line = false

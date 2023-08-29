@@ -27,7 +27,11 @@
     "no-unused-vars": "warn",
     "no-useless-escape": "off",
     "no-return-await": "error",
-    "prettier/prettier": ["error", { "printWidth": 85, "trailingComma": "all" }],
+    "prettier/prettier": [
+      "error",
+      { "printWidth": 85, "trailingComma": "all", "singleQuote": false }
+    ],
+    "quotes": [2, "double", { "avoidEscape": true }],
     "react/react-in-jsx-scope": "error",
     "react/jsx-curly-brace-presence": [
       "error",
