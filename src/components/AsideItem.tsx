@@ -12,7 +12,8 @@ const styles = {
   },
   dark: {
     default: "!text-charcoal-100 hover:!bg-charcoal-600 text-charcoal-50",
-    selected: "!text-white !font-bold rounded-lg hover:bg-charcoal-600",
+    selected:
+      "!text-white !font-bold rounded-lg !bg-charcoal-600 hover:bg-charcoal-600",
     loading: "bg-charcoal-600",
   },
 };
