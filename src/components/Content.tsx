@@ -15,7 +15,7 @@ const Content = (props: ContentProps) => {
   return (
     <div
       className={classNames(
-        "rounded-md text-base w-full h-full p-2 px-4 mb-4",
+        "rounded-md text-base w-full h-full",
         colors,
         additionalClassName,
       )}
