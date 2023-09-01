@@ -8,7 +8,7 @@ const styles = {
 };
 
 const Content = (props: ContentProps) => {
-  const { children, className: additionalClassName } = props;
+  const { children, className: additionalClassName, ...otherProps } = props;
   const { theme } = useTheme();
   const colors = styles[theme];
 
@@ -19,6 +19,7 @@ const Content = (props: ContentProps) => {
         colors,
         additionalClassName,
       )}
+      {...otherProps}
     >
       {children}
     </div>
@@ -30,4 +31,5 @@ export interface ContentProps {
   title?: string;
   className?: string;
   children?: React.ReactNode;
+  [key: string]: unknown;
 }
