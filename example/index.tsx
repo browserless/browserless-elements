@@ -16,6 +16,7 @@ import {
   Alert,
   Loader,
   Select,
+  Input,
 } from "../.";
 
 import "../dist/elements.css";
@@ -49,7 +50,7 @@ const App = () => {
           <br />
           <Alert type="info">This is an alert. They can have many types</Alert>
           <Select
-            options={[
+            values={[
               { value: 1, text: "Hmmm" },
               { value: 2, text: "Hmmm" },
             ]}
@@ -95,21 +96,164 @@ const App = () => {
         </AsideSection>
       </Aside>
 
-      <Page
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
-        <Loader />
+      <Page>
+        <Heading size="xl">@browserless/elements</Heading>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <Heading size="lg">Buttons</Heading>
+        <>
+          <br />
+          <br />
+          <div
+            style={{
+              display: "flex",
+              gap: "0.5em",
+            }}
+          >
+            <Button>Default</Button>
+            <Button disabled>Disabled</Button>
+            <Button busy>Busy</Button>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              gap: "0.5em",
+              marginTop: "1em",
+            }}
+          >
+            <Button actionType="danger">Danger</Button>
+            <Button actionType="danger" disabled>
+              Danger Disabled
+            </Button>
+            <Button actionType="danger" busy>
+              Danger Busy
+            </Button>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              gap: "0.5em",
+              marginTop: "1em",
+            }}
+          >
+            <Button actionType="warning">Warning</Button>
+            <Button actionType="warning" disabled>
+              Warning Disabled
+            </Button>
+            <Button actionType="warning" busy>
+              Warning Busy
+            </Button>
+          </div>
+        </>
+        <br />
+        <br />
+
+        <Heading size="lg">Inputs</Heading>
+        <>
+          <br />
+          <br />
+
+          <div
+            style={{
+              width: "40%",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.5em",
+            }}
+          >
+            <Input label="Default" />
+            <Input label="Placeholder" placeholder="Placeholder" />
+            <Input label="Required" required />
+            <Input label="Input Type" type="date" />
+            <Input label="Disabled" disabled />
+          </div>
+        </>
+        <br />
+        <br />
+
+        <Heading size="lg">Select</Heading>
+        <>
+          <br />
+          <br />
+
+          <div
+            style={{
+              width: "40%",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.5em",
+            }}
+          >
+            <Select
+              label="Default"
+              values={[
+                { value: 1, text: "Red" },
+                { value: 2, text: "Blue" },
+                { value: 3, text: "Green" },
+              ]}
+            />
+            <Select
+              label="Required"
+              values={[
+                { value: 1, text: "Red" },
+                { value: 2, text: "Blue" },
+                { value: 3, text: "Green" },
+              ]}
+              required
+            />
+            <Select
+              label="Disabled"
+              values={[
+                { value: 1, text: "Red" },
+                { value: 2, text: "Blue" },
+                { value: 3, text: "Green" },
+              ]}
+              disabled
+            />
+          </div>
+        </>
+        <br />
+        <br />
+
+        <Heading size="lg">Alerts</Heading>
+        <>
+          <br />
+          <br />
+
+          <div
+            style={{
+              width: "40%",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.5em",
+            }}
+          >
+            <Alert type="info">This is an info alert</Alert>
+            <Alert type="error">This is an error alert</Alert>
+            <Alert type="success">This is a success alert</Alert>
+            <Alert type="warning">This is a warning alert</Alert>
+
+            <Alert type="info">
+              You may cancel at any time by clicking the "Cancel Account" button
+              below. This will prevent any further charges and your browserless
+              instances will shut down at the end of the billing period.
+            </Alert>
+          </div>
+        </>
+
+        {/* <Loader />
         <p style={{ marginTop: "5em" }}>
-          (Just in case, this <i>won't</i> finish loading...)
-        </p>
+          (Just in case, this <i>won&apos;t</i> finish loading...)
+        </p> */}
       </Page>
     </ThemeProvider>
   );
 };
 
+// eslint-disable-next-line react/no-deprecated
 ReactDOM.render(<App />, document.getElementById("root"));

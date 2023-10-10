@@ -10,16 +10,16 @@ import WarningIcon from "./icons/Warning";
 
 const styles = {
   light: {
-    error: "!text-red-800/80",
-    success: "!text-green-800/80 !bg-green-400/20",
+    error: "text-red-800/80",
+    success: "text-green-800/80 bg-green-400/20",
     warning: "bg-yellow-50/90 text-ochre-900",
     info: "bg-blue-50/90 text-blue-900",
   },
   dark: {
-    error: "!text-red-300",
-    success: "!text-green-300 !bg-green-900/30",
+    error: "text-red-300",
+    success: "text-green-300 bg-green-900/30",
     warning: "text-ochre-300 bg-ochre-900/10",
-    info: "!text-blue-300 !bg-blue-800/20 ",
+    info: "text-blue-300 bg-blue-800/20 ",
   },
 };
 

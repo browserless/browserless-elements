@@ -29,5 +29,5 @@ export default function useOuterClick(callback?: Function) {
     }
   }, []); // no need for callback + innerRef dep
 
-  return innerRef; // return ref; client can omit `React.useRef`
+  return innerRef as unknown as React.LegacyRef<HTMLDivElement>; // return ref; client can omit `React.useRef`
 }

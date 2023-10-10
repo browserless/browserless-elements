@@ -16,6 +16,7 @@ const AsideSection = (props: SectionProps) => {
         className={classNames(
           theme === "dark" ? "text-charcoal-100" : "text-charcoal-500",
           "pointer-events-none",
+          "lg:!text-[12pt]",
         )}
       >
         {title}

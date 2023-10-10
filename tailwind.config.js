@@ -1,10 +1,11 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
         charcoal: {
+          50: "#ebebeb",
           100: "#a1a1a1",
           200: "#9b9b9b",
           300: "#818181",
@@ -67,6 +68,13 @@ module.exports = {
         "primary-light": "#fcfcfc",
         "primary-dark": "#313131",
       },
+    },
+    screens: {
+      "2xl": { max: "1535px" },
+      xl: { max: "1279px" },
+      lg: { max: "1023px" },
+      md: { max: "767px" },
+      sm: { max: "639px" },
     },
   },
   plugins: [],

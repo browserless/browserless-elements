@@ -18,7 +18,7 @@ const styles = {
       "bg-charcoal-500 hover:bg-charcoal-550 active:bg-charcoal-600 border-none border-[1px] text-white",
     busy: "hover:!bg-charcoal-600 active:!bg-charcoal-600",
     disabled:
-      "!text-charcoal-100 !bg-charcoal-700 hover:!bg-charcoal-700 active:!bg-charcoal-700",
+      "!text-charcoal-100 !bg-charcoal-500 hover:!bg-charcoal-500 active:!bg-charcoal-500",
   },
 };
 
@@ -49,6 +49,14 @@ const Button = (props: ButtonProps) => {
           "!bg-red-700 hover:!bg-red-750 active:!bg-red-780 !text-white",
         actionType === "warning" &&
           "!bg-yellow-800 hover:!bg-yellow-850 active:!bg-yellow-880 !text-charcoal-900",
+
+        actionType === "danger" &&
+          (disabled || busy) &&
+          "!bg-red-780 hover:!bg-red-780 active:!bg-red-780 !text-white",
+
+        actionType === "warning" &&
+          (disabled || busy) &&
+          "!bg-yellow-880 hover:!bg-yellow-880 active:!bg-yellow-880 !text-charcoal-900",
 
         additionalClassName,
       )}

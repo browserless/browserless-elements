@@ -6,7 +6,7 @@ import { classNames } from "../utils";
 import Heading from "./Heading";
 
 const styles = {
-  base: "fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2  z-50 p-3",
+  base: "fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 !z-[41] p-3",
   light: "bg-white color-charcoal-800",
   dark: "bg-charcoal-700 text-white",
 };
@@ -38,7 +38,7 @@ const Modal = (props: ModalProps) => {
   };
 
   return (
-    <div className={classNames("top-0 left-0 z-20", isActive ? "fixed" : "hidden")}>
+    <div className={classNames("top-0 left-0 z-30", isActive ? "fixed" : "hidden")}>
       <div
         className={classNames(
           styles.base,

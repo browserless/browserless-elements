@@ -25,14 +25,16 @@ const Chevron = ({ className: additionalClassName }: { className?: string }) => 
 
 const styles = {
   light: {
-    button: "bg-neutral-100 border-neutral-200",
-    ul: "bg-neutral-100 ring-neutral-200 mt-1",
-    li: "hover:bg-neutral-200",
+    button: "bg-neutral-100 border-charcoal-50",
+    ul: "bg-neutral-100 ring-charcoal-50 mt-1",
+    li: "hover:bg-charcoal-50",
+    disabled: "text-charcoal-300",
   },
   dark: {
     button: "bg-charcoal-500 border-neutral-500",
     ul: "bg-charcoal-500 ring-neutral-500 mt-1",
     li: "hover:bg-charcoal-650",
+    disabled: "text-charcoal-200",
   },
 };
 
@@ -42,12 +44,16 @@ export default function Select(props: SelectProps) {
     label,
     required,
     onChange,
+    value,
+    disabled,
     className: additionalClassName,
     ...otherProps
   } = props;
   const { theme } = useTheme();
   const [isActive, setActive] = React.useState(false);
-  const [selected, setSelected] = React.useState(values[0].value);
+  const [selected, setSelected] = React.useState(
+    values[value]?.text || values[0].text,
+  );
   const innerRef = useOuterClick(() => setActive(false));
   const id = React.useId();
 
@@ -65,9 +71,14 @@ export default function Select(props: SelectProps) {
         <button
           className={classNames(
             "flex p-2 w-full items-center justify-between rounded border-[1px]",
+            disabled && "cursor-not-allowed",
+            disabled && colors.disabled,
             colors.button,
           )}
-          onClick={() => setActive(!isActive)}
+          onClick={() => {
+            if (disabled) return;
+            return setActive(!isActive);
+          }}
           // @ts-ignore
           ref={innerRef}
         >
@@ -79,7 +90,7 @@ export default function Select(props: SelectProps) {
 
       <ul
         className={classNames(
-          "z-2 absolute w-full rounded ring-1",
+          "z-20 absolute w-full rounded ring-1",
           isActive ? "block" : "hidden",
           colors.ul,
         )}
@@ -89,7 +100,7 @@ export default function Select(props: SelectProps) {
             key={i}
             className={classNames("cursor-pointer p-2", colors.li)}
             onClick={() => {
-              setSelected(v.value);
+              setSelected(v.text);
               onChange && onChange(v.value);
             }}
           >
@@ -104,12 +115,14 @@ export default function Select(props: SelectProps) {
 export interface SelectProps
   extends Omit<React.HTMLProps<HTMLDivElement>, "onChange"> {
   values: {
-    value: string | number;
+    value: any;
     text?: string;
   }[];
+  value?: any;
   label?: string;
   required?: boolean;
+  disabled?: boolean;
   // eslint-disable-next-line no-unused-vars
-  onChange?: (selected: string | number) => void;
+  onChange?: (selected: any) => void;
   [key: string]: unknown;
 }

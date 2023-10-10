@@ -4,7 +4,7 @@ import useTheme from "../hooks/useTheme";
 import { classNames } from "../utils";
 
 const styles = {
-  base: "text-[12pt] border-none my-2 py-2 cursor-pointer hover:rounded-lg ml-3 mr-7 h-8 flex",
+  base: "text-[12pt] border-none my-2 py-2 cursor-pointer hover:rounded-lg ml-3 mr-7 h-8 flex lg:!ml-0 lg:!mr-2 md:mr-7 md:h-8",
   light: {
     default: "hover:bg-[#eaeaea] text-charcoal-500",
     selected: "!text-charcoal-800 !font-bold rounded-lg bg-[#eaeaea]",
@@ -33,6 +33,7 @@ const AsideItem = (props: AsideItemProps) => {
 
   return (
     <div
+      data-type="aside-item"
       className={classNames(
         styles.base,
         colors.default,
@@ -45,7 +46,7 @@ const AsideItem = (props: AsideItemProps) => {
       {...otherProps}
     >
       {!loading && (
-        <div className="w-full flex items-center text-[14pt] ml-2">
+        <div className="w-full flex items-center text-[14pt] ml-2 lg:!pt-[12] md:!text-[14pt]">
           {prefix && <span className="mr-2">{prefix}</span>}
           <span>{children}</span>
           {suffix && <span className="mr-2">{suffix}</span>}
