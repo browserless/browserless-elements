@@ -50,7 +50,7 @@ const Alert = (props: AlertProps) => {
       <div className="flex items-center w-full">
         <div className="flex justify-between items-center">
           {icon && <Icon className="!w-[50px] !min-w-min !h-8 mr-0" />}
-          <div className="full">{children}</div>
+          <div className="full !w-[calc(100%-50px)]">{children}</div>
         </div>
       </div>
     </div>
