@@ -30,6 +30,7 @@ const Button = (props: ButtonProps) => {
     actionType,
     onClick,
     children,
+    prefix,
     ...otherProps
   } = props;
 
@@ -43,6 +44,7 @@ const Button = (props: ButtonProps) => {
         colors.default,
         disabled && colors.disabled,
         variant === "round" && "rounded-md",
+        prefix && "flex gap-1 items-center",
         (disabled || busy) && "cursor-not-allowed",
         !actionType && busy ? colors.disabled : "",
         actionType === "danger" &&
@@ -64,14 +66,17 @@ const Button = (props: ButtonProps) => {
       {...otherProps}
     >
       {busy && <Loader className="!w-6 !h-6 mr-2" />}
+      {prefix ? prefix : null}
       {children}
     </button>
   );
 };
 
 export default Button;
-export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+export interface ButtonProps
+  extends Omit<React.ComponentPropsWithoutRef<"button">, "prefix"> {
   busy?: boolean;
+  prefix?: React.ReactNode;
   actionType?: "danger" | "warning";
   [key: string]: unknown;
 }
