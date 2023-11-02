@@ -18,6 +18,7 @@ const Input = ({
   placeholder,
   required,
   disabled,
+  description,
   type: inputType,
   className: additionalClassName,
   ...otherProps
@@ -35,6 +36,11 @@ const Input = ({
           <label htmlFor={id}>{label}</label>
           {required && <Asterisk className="!align-super !mt-[5px] !ml-[5px]" />}
         </div>
+      )}
+      {description && (
+        <label className="text-sm text-charcoal-200" htmlFor={id}>
+          {description}
+        </label>
       )}
       <input
         type={inputType || "text"}
@@ -60,6 +66,7 @@ export interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
   placeholder?: string;
   required?: boolean;
   type?: React.HTMLInputTypeAttribute;
+  description?: React.ReactNode;
   className?: string;
   disabled?: boolean;
   [key: string]: unknown;
