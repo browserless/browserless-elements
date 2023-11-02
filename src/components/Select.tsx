@@ -52,10 +52,14 @@ export default function Select(props: SelectProps) {
   const { theme } = useTheme();
   const [isActive, setActive] = React.useState(false);
   const [selected, setSelected] = React.useState(
-    values[value]?.text || values[0].text,
+    values.find((val) => val.value === value)?.text || values[0].text,
   );
   const innerRef = useOuterClick(() => setActive(false));
   const id = React.useId();
+
+  React.useEffect(() => {
+    setSelected(values.find((val) => val.value === value)?.text);
+  }, [value, values]);
 
   const colors = styles[theme];
 
@@ -90,7 +94,7 @@ export default function Select(props: SelectProps) {
 
       <ul
         className={classNames(
-          "z-20 absolute w-full rounded ring-1",
+          "z-20 absolute w-full rounded ring-1 max-h-[40vh] overflow-y-scroll",
           isActive ? "block" : "hidden",
           colors.ul,
         )}
