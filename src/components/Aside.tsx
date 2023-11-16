@@ -72,7 +72,7 @@ const Aside = (props: AsideProps) => {
             <div className="w-20 pointer-events-none m-6 mt-0 flex self-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://raw.githubusercontent.com/browserless/chrome/master/assets/browserless_logo_screen_gradient.png"
+                src="https://www.browserless.io/icons/icon-192x192.png"
                 height={100}
                 width={100}
                 className="mb-12"
