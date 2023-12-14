@@ -9,8 +9,8 @@ import BackArrowIcon from "./icons/BackArrow";
 import MenuIcon from "./icons/Menu";
 
 const styles = {
-  light: "bg-primary-light",
-  dark: "bg-primary-dark",
+  light: "bg-primary-light selection:bg-charcoal-800 selection:text-[#e5e5e5]",
+  dark: "bg-primary-dark selection:bg-white selection:text-[#181818]",
 };
 
 const Aside = (props: AsideProps) => {
