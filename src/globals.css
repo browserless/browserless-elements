@@ -80,3 +80,19 @@
     stroke-dashoffset: -124;
   }
 }
+
+
+body * > *::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+body * > *::-webkit-scrollbar-track,
+body * > *::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+body * > *::-webkit-scrollbar-thumb {
+  @apply !bg-charcoal-200;
+  border-radius: 9999px;
+}
