@@ -1,5 +1,7 @@
 # @browserless/elements
 
+> Note: This project is still in beta. Thing will break.
+
 A little small UI library that has browserless' visual identity throught its projects. This will be heavily used in some to-be-released projects. Stay tuned!
 
 ## How to use
@@ -28,5 +30,3 @@ export default function() {
 }
 
 ```
-
-> Note: This project is still in beta. Thing will break.
