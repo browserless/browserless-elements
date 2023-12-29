@@ -1,12 +1,6 @@
 import "react-app-polyfill/ie11";
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { AiOutlineHome, AiOutlineGateway } from "react-icons/ai";
-import { BsMoonStars } from "react-icons/bs";
-
 import {
   Aside,
-  AsideSection,
   AsideItem,
   Page,
   ThemeProvider,
@@ -16,7 +10,11 @@ import {
   Alert,
   Select,
   Input,
-} from "../.";
+} from "@browserless.io/elements";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { AiOutlineHome } from "react-icons/ai";
+import { BsMoonStars } from "react-icons/bs";
 
 import "../dist/elements.css";
 
@@ -39,27 +37,6 @@ const ReactIcon = () => (
     <path d="M12 15.313c-.687 0-1.392-.029-2.1-.088l-.196-.017-.113-.162a25.697 25.697 0 0 1-1.126-1.769 26.028 26.028 0 0 1-.971-1.859l-.084-.177.084-.179c.299-.632.622-1.252.971-1.858.347-.596.726-1.192 1.126-1.77l.113-.16.196-.018a25.148 25.148 0 0 1 4.198 0l.194.019.113.16a25.136 25.136 0 0 1 2.1 3.628l.083.179-.083.177a24.742 24.742 0 0 1-2.1 3.628l-.113.162-.194.017c-.706.057-1.412.087-2.098.087zm-1.834-.904c1.235.093 2.433.093 3.667 0a24.469 24.469 0 0 0 1.832-3.168 23.916 23.916 0 0 0-1.832-3.168 23.877 23.877 0 0 0-3.667 0 23.743 23.743 0 0 0-1.832 3.168 24.82 24.82 0 0 0 1.832 3.168z"></path>
   </svg>
 );
-
-export const timeoutOptions = [
-  { text: "No timeout", value: -1 },
-  { text: "10 seconds", value: 10000 },
-  { text: "15 seconds", value: 15000 },
-  { text: "20 seconds", value: 20000 },
-  { text: "25 seconds", value: 25000 },
-  { text: "30 seconds", value: 30000 },
-  { text: "45 seconds", value: 45000 },
-  { text: "1 minute", value: 60000 },
-  { text: "2 minutes", value: 120000 },
-  { text: "5 minutes", value: 300000 },
-  { text: "10 minutes", value: 600000 },
-  { text: "15 minutes", value: 900000 },
-  { text: "20 minutes", value: 1200000 },
-  { text: "30 minutes", value: 1800000 },
-  { text: "1 hour", value: 3600000 },
-  { text: "6 hours", value: 21600000 },
-  { text: "12 hours", value: 43200000 },
-  { text: "1 day", value: 86400000 },
-];
 
 const App = () => {
   if (!localStorage.getItem("theme")) {
@@ -85,15 +62,7 @@ const App = () => {
       <Modal onClose={closeModal} show={modal}>
         <>
           <Heading size="md">Modal</Heading>
-          <br />
-          <Alert type="info">This is an alert. They can have many types</Alert>
-          <Select
-            values={[
-              { value: 1, text: "Hmmm" },
-              { value: 2, text: "Hmmm" },
-            ]}
-          ></Select>
-          <p>
+          <p style={{ marginBottom: "1em", marginTop: "1em" }}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo non
             veritatis soluta odio, facilis suscipit? Cum architecto blanditiis nam
             laboriosam? Numquam a laudantium dolores voluptates suscipit nulla autem
@@ -112,209 +81,334 @@ const App = () => {
           </div>
         </>
       </Modal>
-      <Aside>
-        <AsideSection title="Home">
-          <AsideItem prefix={<AiOutlineHome />} selected>
-            Home
-          </AsideItem>
-          <AsideItem prefix={<AiOutlineGateway />} onClick={() => setModal(true)}>
-            Modal
-          </AsideItem>
-        </AsideSection>
 
-        <AsideSection title="Configuration">
-          <AsideItem
-            prefix={<BsMoonStars />}
-            onClick={() => {
-              toggleTheme();
-            }}
-          >
-            Toggle theme
-          </AsideItem>
-        </AsideSection>
+      <Aside>
+        <AsideItem prefix={<AiOutlineHome />} selected>
+          Home
+        </AsideItem>
+
+        <AsideItem
+          prefix={<BsMoonStars />}
+          onClick={() => {
+            toggleTheme();
+          }}
+        >
+          Toggle theme
+        </AsideItem>
       </Aside>
 
       <Page>
         <Heading size="xl">@browserless/elements</Heading>
-        <br />
-        <br />
-        <br />
-        <br />
+        <div style={{ marginTop: "4em" }}>
+          <Heading size="lg">Buttons</Heading>
+          <>
+            <div style={{ display: "flex", gap: "0.5em", marginTop: "2em" }}>
+              <Button>Default</Button>
+              <Button disabled>Disabled</Button>
+              <Button busy>Busy</Button>
+              <Button prefix={<ReactIcon />}>Prefixed</Button>
+            </div>
 
-        <Heading size="lg">Buttons</Heading>
-        <>
+            <div style={{ display: "flex", gap: "0.5em", marginTop: "1em" }}>
+              <Button actionType="danger">Danger</Button>
+              <Button actionType="danger" disabled>
+                Danger Disabled
+              </Button>
+              <Button actionType="danger" busy>
+                Danger Busy
+              </Button>
+              <Button actionType="danger" prefix={<ReactIcon />}>
+                Prefixed
+              </Button>
+            </div>
+
+            <div style={{ display: "flex", gap: "0.5em", marginTop: "1em" }}>
+              <Button actionType="warning">Warning</Button>
+              <Button actionType="warning" disabled>
+                Warning Disabled
+              </Button>
+              <Button actionType="warning" busy>
+                Warning Busy
+              </Button>
+              <Button actionType="warning" prefix={<ReactIcon />}>
+                Prefixed
+              </Button>
+            </div>
+          </>
+          <pre style={{ marginTop: "2em" }}>
+            <code className="language-jsx">
+              {`import { Button } from "@browserless.io/elements";
+
+<Button>Default</Button>
+<Button disabled>Disabled</Button>
+<Button busy>Busy</Button>
+<Button prefix={<ReactIcon />}>Prefixed</Button>
+
+<Button actionType="danger">Danger</Button>
+<Button actionType="danger" disabled>Danger Disabled</Button>
+<Button actionType="danger" busy>Danger Busy</Button>
+<Button actionType="danger" prefix={<ReactIcon />}>Prefixed</Button>
+
+<Button actionType="warning">Warning</Button>
+<Button actionType="warning" disabled>Warning Disabled</Button>
+<Button actionType="warning" busy>Warning Busy</Button>
+<Button actionType="warning" prefix={<ReactIcon />}>Prefixed</Button>
+`}
+            </code>
+          </pre>
+        </div>
+        <div style={{ marginTop: "4em" }}>
+          <Heading size="lg">Inputs</Heading>
+          <>
+            <div
+              style={{
+                width: "40%",
+                display: "flex",
+                flexDirection: "column",
+                gap: "1em",
+                marginTop: "2em",
+              }}
+            >
+              <Input label="Default" />
+              <Input label="Placeholder" placeholder="Placeholder" />
+              <Input label="Required" required />
+              <Input label="Input Type" type="date" />
+              <Input
+                label="With Description"
+                description="This input field has a description. That can be useful."
+              />
+              <Input label="Disabled" disabled />
+            </div>
+          </>
+          <pre style={{ marginTop: "2em" }}>
+            <code className="language-jsx">
+              {`import { Input } from "@browserless.io/elements";
+
+<Input label="Default" />
+<Input label="Placeholder" placeholder="Placeholder" />
+<Input label="Required" required />
+<Input label="Input Type" type="date" />
+<Input
+  label="With Description"
+  description="This input field has a description. That can be useful."
+/>
+<Input label="Disabled" disabled />
+`}
+            </code>
+          </pre>
+        </div>
+        <div style={{ marginTop: "4em" }}>
+          <Heading size="lg">Select</Heading>
+          <>
+            <div
+              style={{
+                width: "40%",
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.5em",
+                marginTop: "2em",
+              }}
+            >
+              <Select
+                label="Default"
+                values={[
+                  { value: 1, text: "Red" },
+                  { value: 2, text: "Blue" },
+                  { value: 3, text: "Green" },
+                ]}
+              />
+              <Select
+                label="Required"
+                values={[
+                  { value: 1, text: "Red" },
+                  { value: 2, text: "Blue" },
+                  { value: 3, text: "Green" },
+                ]}
+                required
+              />
+              <Select
+                label="Lots of elements"
+                values={Array.from({ length: 25 }).map((_, i) => ({
+                  value: i,
+                  text: `Option ${i + 1}`,
+                }))}
+                required
+              />
+              <Select
+                label="Disabled"
+                values={[
+                  { value: 1, text: "Red" },
+                  { value: 2, text: "Blue" },
+                  { value: 3, text: "Green" },
+                ]}
+                disabled
+              />
+            </div>
+          </>
+          <pre style={{ marginTop: "2em" }}>
+            <code className="language-jsx">
+              {`import { Select } from "@browserless.io/elements";
+
+const values = [
+  { value: 1, text: "Red" },
+  { value: 2, text: "Blue" },
+  { value: 3, text: "Green" },
+];
+
+<Select label="Default" values={values} />
+<Select label="Required" values={values} required />
+<Select label="Disabled" values={values} disabled />
+<Select
+  label="Lots of elements"
+  values={Array.from({ length: 25 }).map((_, i) => ({
+    value: i,
+    text: \`Option \${i + 1}\`,
+  }))}
+  required
+/>
+`}
+            </code>
+          </pre>
+        </div>
+        <div style={{ marginTop: "4em" }}>
+          <Heading size="lg">Alerts</Heading>
+          <>
+            <div
+              style={{
+                width: "40%",
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.5em",
+                marginTop: "2em",
+              }}
+            >
+              <Alert type="info">This is an info alert</Alert>
+              <Alert type="error">This is an error alert</Alert>
+              <Alert type="success">This is a success alert</Alert>
+              <Alert type="warning">This is a warning alert</Alert>
+
+              <Alert type="info">
+                <Heading size="sm">
+                  Multiple lines of text can be used in an alert.
+                </Heading>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vero
+                alias necessitatibus numquam doloremque sit, tempora aperiam dolores
+                animi nostrum officiis neque, dolorum saepe ad possimus. Laudantium
+                corrupti magni accusantium.
+              </Alert>
+            </div>
+            <pre style={{ marginTop: "2em" }}>
+              <code className="language-jsx">
+                {`import { Alert } from "@browserless.io/elements";
+
+<Alert type="info">This is an info alert</Alert>
+<Alert type="error">This is an error alert</Alert>
+<Alert type="success">This is a success alert</Alert>
+<Alert type="warning">This is a warning alert</Alert>
+
+<Alert type="info">
+  Multiple lines of text can be used in an alert. <br/> Lorem ipsum dolor sit
+  amet consectetur adipisicing elit. Harum vero alias necessitatibus
+  numquam doloremque sit, tempora aperiam dolores animi nostrum officiis
+  neque, dolorum saepe ad possimus. Laudantium corrupti magni
+  accusantium.
+</Alert>
+`}
+              </code>
+            </pre>
+          </>
+        </div>
+        <div style={{ marginTop: "4em" }}>
+          <Heading size="lg">Headings</Heading>
           <br />
-          <br />
-          <div
-            style={{
-              display: "flex",
-              gap: "0.5em",
-            }}
-          >
-            <Button>Default</Button>
-            <Button disabled>Disabled</Button>
-            <Button busy>Busy</Button>
-            <Button prefix={<ReactIcon />}>Prefixed</Button>
-          </div>
+          <Heading size="2xl">2XL Heading</Heading>
+          <Heading size="xl">XL Heading</Heading>
+          <Heading size="lg">Large Heading</Heading>
+          <Heading size="md">Medium Heading</Heading>
+          <Heading size="sm">Small Heading</Heading>
+          <pre style={{ marginTop: "2em" }}>
+            <code className="language-jsx">
+              {`import { Heading } from "@browserless.io/elements";
 
-          <div
-            style={{
-              display: "flex",
-              gap: "0.5em",
-              marginTop: "1em",
-            }}
-          >
-            <Button actionType="danger">Danger</Button>
-            <Button actionType="danger" disabled>
-              Danger Disabled
-            </Button>
-            <Button actionType="danger" busy>
-              Danger Busy
-            </Button>
-            <Button actionType="danger" prefix={<ReactIcon />}>
-              Prefixed
-            </Button>
-          </div>
+<Heading size="2xl">2XL Heading</Heading>
+<Heading size="xl">XL Heading</Heading>
+<Heading size="lg">Large Heading</Heading>
+<Heading size="md">Medium Heading</Heading>
+<Heading size="sm">Small Heading</Heading>
+`}
+            </code>
+          </pre>
+        </div>
+        <div style={{ marginTop: "4em" }}>
+          <Heading size="lg">Modals</Heading>
+          <Button style={{ marginTop: "2em" }} onClick={() => setModal(true)}>
+            Open Modal
+          </Button>
+          <pre style={{ marginTop: "2em" }}>
+            <code className="language-jsx">
+              {`import { Button, Modal } from "@browserless.io/elements";
+import React from "react";
 
-          <div
-            style={{
-              display: "flex",
-              gap: "0.5em",
-              marginTop: "1em",
-            }}
-          >
-            <Button actionType="warning">Warning</Button>
-            <Button actionType="warning" disabled>
-              Warning Disabled
-            </Button>
-            <Button actionType="warning" busy>
-              Warning Busy
-            </Button>
-            <Button actionType="warning" prefix={<ReactIcon />}>
-              Prefixed
-            </Button>
-          </div>
-        </>
-        <br />
-        <br />
+const [modal, setModal] = React.useState(false);
+const closeModal = () => setModal(false);
 
-        <Heading size="lg">Inputs</Heading>
-        <>
-          <br />
-          <br />
+<Modal onClose={closeModal} show={modal}>
+  <>
+    <Heading size="md">Modal</Heading>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo non
+      veritatis soluta odio, facilis suscipit? Cum architecto blanditiis nam
+      laboriosam? Numquam a laudantium dolores voluptates suscipit nulla autem
+      ab minus.
+    </p>
+      <Button onClick={closeModal}>Cancel</Button>
+      <Button actionType="danger">Delete</Button>
+    </div>
+  </>
+</Modal>
 
+<Button onClick={() => setModal(true)}>Open Modal</Button>
+`}
+            </code>
+          </pre>
+        </div>
+        <div style={{ marginTop: "4em" }}>
+          <Heading size="lg">Themes</Heading>
           <div
             style={{
               width: "40%",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1em",
+              marginTop: "2em",
             }}
           >
-            <Input label="Default" />
-            <Input label="Placeholder" placeholder="Placeholder" />
-            <Input label="Required" required />
-            <Input label="Input Type" type="date" />
-            <Input
-              label="With Description"
-              description="This input field has a description. That can be useful."
-            />
-            <Input label="Disabled" disabled />
+            <ThemeProvider theme="light">
+              <Input label="Light Theme forced" />
+              <Button>Light Theme</Button>
+            </ThemeProvider>
+
+            <ThemeProvider theme="dark">
+              <Input label="Dark Theme forced" />
+              <Button>Dark Theme</Button>
+            </ThemeProvider>
           </div>
-        </>
-        <br />
-        <br />
+          <pre>
+            <code className="language-jsx">
+              {`import { Button, Input, ThemeProvider } from "@browserless.io/elements";
 
-        <Heading size="lg">Select</Heading>
-        <>
-          <br />
-          <br />
+<div>
+  <ThemeProvider theme="light">
+    <Input label="Light Theme forced" />
+    <Button>Light Theme</Button>
+  </ThemeProvider>
 
-          <div
-            style={{
-              width: "40%",
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.5em",
-            }}
-          >
-            <Select
-              label="Default"
-              values={[
-                { value: 1, text: "Red" },
-                { value: 2, text: "Blue" },
-                { value: 3, text: "Green" },
-              ]}
-            />
-            <Select
-              label="Required"
-              values={[
-                { value: 1, text: "Red" },
-                { value: 2, text: "Blue" },
-                { value: 3, text: "Green" },
-              ]}
-              required
-            />
-            <Select
-              label="Lots of elements"
-              values={Array.from({ length: 25 }).map((_, i) => ({
-                value: i,
-                text: `Option ${i + 1}`,
-              }))}
-              required
-            />
-            <Select
-              label="Disabled"
-              values={[
-                { value: 1, text: "Red" },
-                { value: 2, text: "Blue" },
-                { value: 3, text: "Green" },
-              ]}
-              disabled
-            />
-          </div>
-        </>
-        <br />
-        <br />
-
-        <Heading size="lg">Alerts</Heading>
-        <>
-          <br />
-          <br />
-
-          <div
-            style={{
-              width: "40%",
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.5em",
-            }}
-          >
-            <Alert type="info">This is an info alert</Alert>
-            <Alert type="error">This is an error alert</Alert>
-            <Alert type="success">This is a success alert</Alert>
-            <Alert type="warning">This is a warning alert</Alert>
-
-            <Alert type="info">
-              Multiple lines of text can be used in an alert. Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Harum vero alias necessitatibus
-              numquam doloremque sit, tempora aperiam dolores animi nostrum officiis
-              neque, dolorum saepe ad possimus. Laudantium corrupti magni
-              accusantium.
-            </Alert>
-          </div>
-        </>
-
-        <Heading size="lg">Headings</Heading>
-        <br />
-        <br />
-        <Heading size="2xl">2XL Heading</Heading>
-        <Heading size="xl">XL Heading</Heading>
-        <Heading size="lg">Large Heading</Heading>
-        <Heading size="md">Medium Heading</Heading>
-        <Heading size="sm">Small Heading</Heading>
-        <br />
-        <br />
+  <ThemeProvider theme="dark">
+    <Input label="Dark Theme forced" />
+    <Button>Dark Theme</Button>
+  </ThemeProvider>
+</div>
+`}
+            </code>
+          </pre>
+        </div>
       </Page>
     </ThemeProvider>
   );
