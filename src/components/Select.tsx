@@ -54,7 +54,7 @@ export default function Select(props: SelectProps) {
   const [selected, setSelected] = React.useState(
     values.find((val) => val.value === value)?.text || values[0].text,
   );
-  const innerRef = useOuterClick(() => setActive(false));
+  const innerRef = useOuterClick<HTMLButtonElement>(() => setActive(false));
   const id = React.useId();
 
   React.useEffect(() => {
@@ -83,7 +83,6 @@ export default function Select(props: SelectProps) {
             if (disabled) return;
             return setActive(!isActive);
           }}
-          // @ts-ignore
           ref={innerRef}
         >
           <span>{selected}</span>
