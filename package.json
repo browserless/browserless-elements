@@ -34,7 +34,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@browserless/elements",
+  "name": "@browserless.io/elements",
   "author": "browserless.io",
   "module": "dist/elements.esm.js",
   "size-limit": [
@@ -69,5 +69,8 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.6.1",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "refractor": "^4.8.1"
   }
 }
