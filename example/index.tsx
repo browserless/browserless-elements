@@ -56,6 +56,7 @@ const App = () => {
   );
 
   const [modal, setModal] = React.useState(false);
+  const [checked, setChecked] = React.useState(true);
   const closeModal = () => setModal(false);
 
   return (
@@ -332,14 +333,25 @@ const values = [
                 marginTop: "2em",
               }}
             >
-              <Toggle label="Default" />
+              <Toggle
+                label="Default"
+                checked={checked}
+                onToggle={() => setChecked(!checked)}
+              />
               <Toggle label="Disabled" disabled />
             </div>
             <pre style={{ marginTop: "2em" }}>
               <code className="language-jsx">
                 {`import { Toggle } from "@browserless.io/elements";
+import React from "react";
 
-<Toggle label="Default" />
+const [checked, setChecked] = React.useState(true);
+
+<Toggle
+  label="Default"
+  checked={checked}
+  onToggle={() => setChecked(!checked)}
+/>
 <Toggle label="Disabled" disabled />
 `}
               </code>
