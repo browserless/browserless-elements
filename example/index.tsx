@@ -17,6 +17,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { BsMoonStars } from "react-icons/bs";
 
 import "../dist/elements.css";
+import { Toggle } from "../dist";
 
 type Theme = "light" | "dark";
 
@@ -318,6 +319,34 @@ const values = [
             </pre>
           </>
         </div>
+
+        <div style={{ marginTop: "4em" }}>
+          <Heading size="lg">Toggles</Heading>
+          <>
+            <div
+              style={{
+                width: "40%",
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.5em",
+                marginTop: "2em",
+              }}
+            >
+              <Toggle label="Default" />
+              <Toggle label="Disabled" disabled />
+            </div>
+            <pre style={{ marginTop: "2em" }}>
+              <code className="language-jsx">
+                {`import { Toggle } from "@browserless.io/elements";
+
+<Toggle label="Default" />
+<Toggle label="Disabled" disabled />
+`}
+              </code>
+            </pre>
+          </>
+        </div>
+
         <div style={{ marginTop: "4em" }}>
           <Heading size="lg">Headings</Heading>
           <br />

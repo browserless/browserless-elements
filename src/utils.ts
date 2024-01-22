@@ -36,3 +36,5 @@ export function classNames(...args: any[]): string {
 
   return classes.join(" ");
 }
+
+export function noop(): void {}

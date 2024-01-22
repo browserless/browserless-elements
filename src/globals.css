@@ -95,3 +95,20 @@ body * > *::-webkit-scrollbar-thumb {
   @apply !bg-charcoal-200;
   border-radius: 9999px;
 }
+
+
+input.dark.toggle-cb:checked {
+  @apply bg-green-800/80;
+}
+
+input.light.toggle-cb:checked {
+  @apply bg-green-600/80;
+}
+
+input.toggle-cb:checked ~ span:last-child {
+  @apply translate-x-8;
+}
+
+.toggle-cb + span {
+  box-shadow: rgba(0, 0, 0, 0.20) 0px 1px 4px;
+}

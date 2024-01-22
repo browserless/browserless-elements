@@ -8,7 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@browserless.io/elements": "^0.1.0",
+    "@browserless.io/elements": "^0.1.3-beta",
     "highlight.js": "^11.9.0",
     "lodash": "^4.17.21",
     "react-app-polyfill": "^1.0.0",
