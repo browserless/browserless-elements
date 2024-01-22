@@ -9,7 +9,6 @@ import {
   Button,
   Alert,
   Select,
-  Input,
 } from "@browserless.io/elements";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
@@ -17,7 +16,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { BsMoonStars } from "react-icons/bs";
 
 import "../dist/elements.css";
-import { Toggle } from "../dist";
+import { Input, Toggle } from "../dist";
 
 type Theme = "light" | "dark";
 
@@ -339,6 +338,44 @@ const values = [
                 onToggle={() => setChecked(!checked)}
               />
               <Toggle label="Disabled" disabled />
+            </div>
+            <pre style={{ marginTop: "2em" }}>
+              <code className="language-jsx">
+                {`import { Toggle } from "@browserless.io/elements";
+import React from "react";
+
+const [checked, setChecked] = React.useState(true);
+
+<Toggle
+  label="Default"
+  checked={checked}
+  onToggle={() => setChecked(!checked)}
+/>
+<Toggle label="Disabled" disabled />
+`}
+              </code>
+            </pre>
+          </>
+        </div>
+
+        <div style={{ marginTop: "4em" }}>
+          <Heading size="lg">Radio Buttons</Heading>
+          <>
+            <div
+              style={{
+                width: "40%",
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.5em",
+                marginTop: "2em",
+              }}
+            >
+              <p>Color</p>
+              <Input type="radio" label="Red" name="color" />
+              <Input type="radio" label="Blue" name="color" />
+              <Input type="radio" label="Green" name="color" />
+
+              <Input type="radio" label="Disabled" name="color" disabled />
             </div>
             <pre style={{ marginTop: "2em" }}>
               <code className="language-jsx">
