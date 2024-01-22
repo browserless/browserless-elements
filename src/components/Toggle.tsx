@@ -45,6 +45,7 @@ const Toggle = ({
           onChange={onToggle}
           className={classNames(
             "toggle-cb appearance-none transition-colors cursor-pointer w-14 h-7 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-blue-500",
+            disabled && "!cursor-not-allowed",
             styles[theme].track,
             theme,
           )}
