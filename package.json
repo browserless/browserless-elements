@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0-beta",
+  "version": "0.2.1-beta",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -23,7 +23,8 @@
     "lint": "eslint src --ext .ts,.tsx --fix",
     "size": "size-limit",
     "analyze": "size-limit --why",
-    "prettier": "prettier --config .prettierrc --write --log-level error \"src/**/*.{ts,tsx,css}\" tailwind.config.js"
+    "prettier": "prettier --config .prettierrc --write --log-level error \"src/**/*.{ts,tsx,css}\" tailwind.config.js",
+    "publish:test": "npm run build && npm publish --registry http://localhost:4873/"
   },
   "peerDependencies": {
     "react": ">=16"
