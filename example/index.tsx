@@ -15,7 +15,7 @@ import * as ReactDOM from "react-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import { BsMoonStars } from "react-icons/bs";
 
-import "../dist/elements.css";
+import "@browserless.io/elements/dist/elements.css";
 import { Input, Toggle } from "../dist";
 
 type Theme = "light" | "dark";
@@ -371,25 +371,41 @@ const [checked, setChecked] = React.useState(true);
               }}
             >
               <p>Color</p>
-              <Input type="radio" label="Red" name="color" />
-              <Input type="radio" label="Blue" name="color" />
-              <Input type="radio" label="Green" name="color" />
+              <div
+                style={{
+                  display: "flex",
+                  gap: "0.5em",
+                }}
+              >
+                <Input type="radio" label="Red" name="color" />
+                <Input type="radio" label="Blue" name="color" />
+                <Input type="radio" label="Green" name="color" />
+              </div>
 
-              <Input type="radio" label="Disabled" name="color" disabled />
+              <p>Disabled</p>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "0.5em",
+                }}
+              >
+                <Input type="radio" label="Disabled Unchecked" disabled />
+                <Input type="radio" label="Disabled Checked" checked />
+              </div>
             </div>
             <pre style={{ marginTop: "2em" }}>
               <code className="language-jsx">
                 {`import { Toggle } from "@browserless.io/elements";
-import React from "react";
 
-const [checked, setChecked] = React.useState(true);
+<p>Color</p>
+<div className="flex">
+  <Input type="radio" label="Red" name="color" />
+  <Input type="radio" label="Blue" name="color" />
+  <Input type="radio" label="Green" name="color" />
+</div>
 
-<Toggle
-  label="Default"
-  checked={checked}
-  onToggle={() => setChecked(!checked)}
-/>
-<Toggle label="Disabled" disabled />
+<p>Disabled</p>
+<Input type="radio" label="Disabled" name="color" disabled />
 `}
               </code>
             </pre>
@@ -458,7 +474,7 @@ const closeModal = () => setModal(false);
               marginTop: "2em",
             }}
           >
-            <ThemeProvider theme="light">
+            {/* <ThemeProvider theme="light">
               <Input label="Light Theme forced" />
               <Button>Light Theme</Button>
             </ThemeProvider>
@@ -466,7 +482,7 @@ const closeModal = () => setModal(false);
             <ThemeProvider theme="dark">
               <Input label="Dark Theme forced" />
               <Button>Dark Theme</Button>
-            </ThemeProvider>
+            </ThemeProvider> */}
           </div>
           <pre>
             <code className="language-jsx">

@@ -8,12 +8,9 @@ const useTheme = () => {
     variant: "round" | "solid";
   };
 
-  const [usedTheme] = React.useState(theme);
-  const [usedVariant] = React.useState(variant);
-
   return {
-    theme: usedTheme,
-    variant: usedVariant,
+    theme,
+    variant,
   };
 };
 

@@ -9,7 +9,7 @@ const styles = {
     thumb: "bg-gray-200",
   },
   light: {
-    track: "bg-charcoal-50",
+    track: "bg-charcoal-100",
     thumb: "bg-gray-100",
   },
 };

@@ -9,7 +9,7 @@ export const ThemeContext = React.createContext(defaultTheme);
 const ThemeProvider = (props: ThemeProviderProps) => {
   const { children } = props;
   const [theme] = React.useState({
-    theme: props.theme || defaultTheme.theme,
+    theme: props.theme,
     variant: props.variant || defaultTheme.variant,
   });
 
@@ -19,6 +19,6 @@ const ThemeProvider = (props: ThemeProviderProps) => {
 export default ThemeProvider;
 export interface ThemeProviderProps {
   children: React.ReactNode;
-  theme?: "light" | "dark";
+  theme: "light" | "dark";
   variant?: "round" | "solid";
 }
