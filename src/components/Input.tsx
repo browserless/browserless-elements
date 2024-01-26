@@ -17,7 +17,7 @@ const styles = {
   },
   radio: {
     light:
-      "bg-charcoal-50 peer-checked:border-primary-dark [&>span]:text-primary-dark",
+      "bg-neutral-100 !border-charcoal-50 peer-checked:!border-primary-dark peer-checked:!text-primary-dark [&>span]:!text-primary-dark",
     dark: "bg-charcoal-500 peer-checked:border-primary-light [&>span]:text-primary-light",
   },
 };
