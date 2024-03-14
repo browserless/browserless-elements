@@ -11,6 +11,7 @@ export { default as Loader } from "./components/Loader";
 export { default as Modal } from "./components/Modal";
 export { default as Page } from "./components/Page";
 export { default as Select } from "./components/Select";
+export { default as TextArea } from "./components/TextArea";
 export { default as Toggle } from "./components/Toggle";
 export { classNames } from "./utils";
 
