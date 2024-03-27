@@ -6,7 +6,7 @@ import { classNames } from "../utils";
 import { Asterisk } from "./icons/Asterisk";
 
 const styles = {
-  light: "bg-neutral-100 border-[1px] border-neutral-200 [color-scheme:light]",
+  light: "bg-white border-[1px] border-neutral-200 [color-scheme:light]",
   dark: "bg-charcoal-500 border-[1px] border-neutral-500 [color-scheme:dark]",
 };
 
@@ -28,7 +28,7 @@ const TextArea = ({
   const id = React.useId();
 
   return (
-    <div className="!w-full">
+    <div className="!w-full font-semibold">
       {label && (
         <div className="flex">
           <label htmlFor={id}>{label}</label>

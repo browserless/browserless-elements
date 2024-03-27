@@ -9,8 +9,9 @@ import BackArrowIcon from "./icons/BackArrow";
 import MenuIcon from "./icons/Menu";
 
 const styles = {
-  light: "bg-primary-light selection:bg-charcoal-800 selection:text-[#e5e5e5]",
-  dark: "bg-primary-dark selection:bg-white selection:text-[#181818]",
+  light:
+    "bg-snow-50 selection:bg-tar-700 selection:text-snow-50 border-r border-solid border-snow-200",
+  dark: "bg-tar-700 selection:bg-snow-50 selection:text-tar-700 border-r border-solid border-charcoal-600",
 };
 
 const Aside = (props: AsideProps) => {
@@ -61,7 +62,7 @@ const Aside = (props: AsideProps) => {
         />
         <div
           className={classNames(
-            "h-screen w-[250px] fixed z-10 overflow-x-hidden",
+            "h-screen w-[250px] fixed z-10 overflow-x-hidden shadow-heavy",
             "lg:w-[175px] md:!w-[250px] md:z-50 md:pt-5",
             additionalClassName,
             colors,
@@ -69,7 +70,7 @@ const Aside = (props: AsideProps) => {
           {...otherProps}
         >
           <div className="w-full h-full border-none pt-[20%]">
-            <div className="w-20 pointer-events-none m-6 mt-0 flex self-center">
+            <div className="w-20 pointer-events-none flex self-center !my-0 !mx-auto">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="https://www.browserless.io/icons/icon-192x192.png"

@@ -25,15 +25,15 @@ const Chevron = ({ className: additionalClassName }: { className?: string }) => 
 
 const styles = {
   light: {
-    button: "bg-neutral-100 border-charcoal-50",
-    ul: "bg-neutral-100 ring-charcoal-50 mt-1",
-    li: "hover:bg-charcoal-50",
+    button: "bg-white border-snow-300",
+    ul: "bg-white ring-snow-300 mt-1",
+    li: "hover:bg-snow-300",
     disabled: "text-charcoal-300",
   },
   dark: {
-    button: "bg-charcoal-500 border-neutral-500",
-    ul: "bg-charcoal-500 ring-neutral-500 mt-1",
-    li: "hover:bg-charcoal-650",
+    button: "bg-tar-500 border-neutral-500",
+    ul: "bg-tar-500 ring-neutral-500 mt-1",
+    li: "hover:bg-tar-600",
     disabled: "text-charcoal-200",
   },
 };
@@ -64,7 +64,7 @@ export default function Select(props: SelectProps) {
   const colors = styles[theme];
 
   return (
-    <div x-data="select" className="relative w-full">
+    <div x-data="select" className="relative w-full !font-semibold">
       {label && (
         <div className="flex">
           <label htmlFor={id}>{label}</label>
@@ -74,7 +74,7 @@ export default function Select(props: SelectProps) {
       <div className={additionalClassName} {...otherProps}>
         <button
           className={classNames(
-            "flex p-2 w-full items-center justify-between rounded border-[1px]",
+            "flex p-2 w-full items-center justify-between rounded border-[1px] !h-11",
             disabled && "cursor-not-allowed",
             disabled && colors.disabled,
             colors.button,

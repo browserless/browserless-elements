@@ -9,6 +9,9 @@ import {
   Button,
   Alert,
   Select,
+  Input,
+  Toggle,
+  Content,
 } from "@browserless.io/elements";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
@@ -16,7 +19,6 @@ import { AiOutlineHome } from "react-icons/ai";
 import { BsMoonStars } from "react-icons/bs";
 
 import "@browserless.io/elements/dist/elements.css";
-import { Input, Toggle } from "../dist";
 
 type Theme = "light" | "dark";
 
@@ -103,7 +105,7 @@ const App = () => {
         <div style={{ marginTop: "4em" }}>
           <Heading size="lg">Buttons</Heading>
           <>
-            <div style={{ display: "flex", gap: "0.5em", marginTop: "2em" }}>
+            <div style={{ display: "flex", gap: "0.5em", marginTop: "1em" }}>
               <Button>Default</Button>
               <Button disabled>Disabled</Button>
               <Button busy>Busy</Button>

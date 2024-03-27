@@ -3,8 +3,8 @@ import React from "react";
 import useTheme from "../hooks/useTheme";
 import { classNames } from "../utils";
 const styles = {
-  light: "bg-primary-light",
-  dark: "bg-primary-dark",
+  light: "bg-white border border-solid border-snow-200 shadow-heavy",
+  dark: "bg-tar-700 !border border-solid border-charcoal-700 shadow-heavy",
 };
 
 const Content = (props: ContentProps) => {
@@ -15,7 +15,7 @@ const Content = (props: ContentProps) => {
   return (
     <div
       className={classNames(
-        "rounded-md text-base w-full h-full",
+        "rounded text-base w-full h-full",
         colors,
         additionalClassName,
       )}

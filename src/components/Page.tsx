@@ -11,11 +11,11 @@ const Page = (props: PageProps) => {
     <div
       className={classNames(
         additionalClassName,
-        "ml-[250px] p-8 min-w-[calc(100vw-250px)] !min-h-screen !h-fit",
+        "max-w-[1441px] flex flex-col items-center ml-[250px] p-8 min-w-[calc(100vw-250px)] !min-h-screen !h-fit",
         "lg:ml-[175px] md:!ml-0",
         theme === "light"
-          ? "bg-[#e5e5e5] text-charcoal-800 selection:bg-charcoal-800 selection:text-[#e5e5e5]"
-          : "bg-[#181818] text-white selection:bg-white selection:text-[#181818]",
+          ? "bg-snow-100 text-tar-700 selection:bg-tar-700 selection:text-white"
+          : "bg-tar-900 text-white selection:bg-white selection:text-tar-900",
       )}
       {...otherProps}
     >

@@ -4,16 +4,16 @@ import useTheme from "../hooks/useTheme";
 import { classNames } from "../utils";
 
 const styles = {
-  base: "text-[12pt] border-none my-2 py-2 cursor-pointer hover:rounded-lg ml-3 mr-7 h-8 flex lg:!ml-0 lg:!mr-2 md:mr-7 md:h-8",
+  base: "text-[12pt] border-none my-2 py-2 cursor-pointer hover:rounded ml-3 mr-7 h-8 flex lg:!ml-0 lg:!mr-2 md:mr-7 md:h-8 font-medium",
   light: {
     default: "hover:bg-[#eaeaea] text-charcoal-500",
-    selected: "!text-charcoal-800 !font-bold rounded-lg bg-[#eaeaea]",
+    selected: "!text-charcoal-800 !font-bold rounded bg-[#eaeaea]",
     loading: "bg-[#eaeaea]",
   },
   dark: {
-    default: "!text-charcoal-100 hover:!bg-charcoal-600 text-charcoal-50",
+    default: "!text-charcoal-100 hover:!bg-charcoal-600",
     selected:
-      "!text-white !font-bold rounded-lg !bg-charcoal-600 hover:bg-charcoal-600",
+      "!text-white !font-bold rounded !bg-charcoal-600 hover:bg-charcoal-600",
     loading: "bg-charcoal-600",
   },
 };
@@ -40,7 +40,7 @@ const AsideItem = (props: AsideItemProps) => {
         loading && colors.loading,
         selected && colors.selected,
         loading && "!cursor-default animate-pulse",
-        loading && variant === "round" && "!rounded-lg py-3",
+        loading && variant === "round" && "!rounded py-3",
         additionalClassName,
       )}
       {...otherProps}

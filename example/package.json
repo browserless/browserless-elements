@@ -9,13 +9,14 @@
   },
   "dependencies": {
     "@browserless.io/elements": "file:..",
-    "highlight.js": "^11.9.0",
-    "lodash": "^4.17.21",
-    "react-app-polyfill": "^1.0.0",
-    "react-code-blocks": "^0.1.5",
-    "react-icons": "^4.10.1",
-    "react-syntax-highlighter": "^15.5.0",
-    "refractor": "^4.8.1"
+    "highlight.js": "11.9.0",
+    "lodash": "4.17.21",
+    "postcss": "^8.4.38",
+    "react-app-polyfill": "1.0.0",
+    "react-code-blocks": "0.1.5",
+    "react-icons": "4.10.1",
+    "react-syntax-highlighter": "15.5.0",
+    "refractor": "4.8.1"
   },
   "alias": {
     "react": "../node_modules/react",

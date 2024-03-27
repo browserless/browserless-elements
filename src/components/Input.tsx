@@ -12,13 +12,13 @@ const _uniqueId = (prefix: string) =>
 
 const styles = {
   default: {
-    light: "bg-neutral-100 border-[1px] !border-charcoal-50 [color-scheme:light]",
-    dark: "bg-charcoal-500 border-[1px] border-neutral-500 [color-scheme:dark]",
+    light: "bg-white border-[1px] !border-snow-300 [color-scheme:light]",
+    dark: "bg-tar-500 border-[1px] border-neutral-500 [color-scheme:dark]",
   },
   radio: {
     light:
-      "bg-neutral-100 !border-charcoal-50 text-primary-dark peer-checked:!border-primary-dark [&>span]:!text-primary-dark",
-    dark: "bg-charcoal-500 peer-checked:border-primary-light [&>span]:text-primary-light",
+      "bg-white !border-snow-300 text-primary-dark peer-checked:!border-primary-dark [&>span]:!text-primary-dark",
+    dark: "bg-tar-500 peer-checked:border-primary-light [&>span]:text-primary-light border border-neutral-500",
   },
 };
 
@@ -49,8 +49,7 @@ const Input = ({
         <input
           type="radio"
           value="1"
-          className="peer
-          hidden"
+          className="peer hidden"
           name="framework"
           disabled={disabled}
           {...otherProps}
@@ -58,14 +57,14 @@ const Input = ({
 
         <div
           className={classNames(
-            "border-transparent flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm group",
+            "border-transparent flex items-center justify-between px-4 py-2 border rounded cursor-pointer text-sm group",
             "peer-checked:[&>svg.radio-unselected]:hidden peer-checked:[&>svg.radio-selected]:block",
             disabled && "!cursor-not-allowed",
             additionalClassName,
             colors,
           )}
         >
-          <span className="font-medium text-base">{label}</span>
+          <span className="!font-semibold text-base">{label}</span>
           <RadioUnchecked className="radio-unselected" />
           <RadioChecked className="radio-selected hidden" />
         </div>
@@ -74,7 +73,7 @@ const Input = ({
   }
 
   return (
-    <div className="!w-full">
+    <div className="!w-full !font-semibold">
       {label && (
         <div className="flex">
           <label htmlFor={id}>{label}</label>
@@ -92,7 +91,7 @@ const Input = ({
         className={classNames(
           "py-2 px-4 w-full !outline-none",
           disabled && "cursor-not-allowed",
-          variant === "round" && "rounded-md",
+          variant === "round" && "rounded",
           colors,
           additionalClassName,
         )}

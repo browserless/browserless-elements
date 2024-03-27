@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0-beta",
+  "version": "0.5.0-beta",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -7,7 +7,11 @@
     "dist",
     "tailwind.config.js"
   ],
-  "keywords": ["react", "browserless.io", "ui"],
+  "keywords": [
+    "react",
+    "browserless.io",
+    "ui"
+  ],
   "engines": {
     "node": ">=10"
   },
@@ -66,7 +70,6 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.3",
-    "postcss": "^8.4.28",
     "prettier": "^3.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

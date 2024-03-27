@@ -6,9 +6,9 @@ import { classNames } from "../utils";
 import Heading from "./Heading";
 
 const styles = {
-  base: "fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 !z-[41] p-3 !max-w-[90vw] !max-h-[90vh] overflow-scroll",
-  light: "bg-white color-charcoal-800",
-  dark: "bg-charcoal-700 text-white",
+  base: "fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 !z-[41] !max-w-[90vw] !max-h-[90vh] overflow-scroll",
+  light: "bg-white color-charcoal-800 border-solid border-snow-200 text-tar-700",
+  dark: "bg-tar-700 !border border-solid border-charcoal-700 shadow-heavy text-snow-50",
 };
 
 const Modal = (props: ModalProps) => {

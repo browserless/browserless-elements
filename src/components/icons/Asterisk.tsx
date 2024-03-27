@@ -15,7 +15,7 @@ export const Asterisk = (props: React.ComponentPropsWithoutRef<"svg">) => {
       xmlns="http://www.w3.org/2000/svg"
       className={classNames(
         "ml-1",
-        theme === "dark" ? "fill-hot-yellow" : "fill-hot-pink",
+        theme === "dark" ? "fill-hot-yellow-500" : "fill-hot-pink-500",
         additionalClassName,
       )}
     >

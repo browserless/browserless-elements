@@ -6,19 +6,31 @@ import { classNames } from "../utils";
 import Loader from "./Loader";
 
 const styles = {
-  base: "py-2 px-4 flex !text-base text-center",
+  base: "py-2 px-6 flex !text-base text-center font-semibold",
   light: {
     default:
-      "bg-white border-neutral-200 border-[1px] hover:bg-neutral-50 active:bg-neutral-100 text-charcoal-900",
+      "bg-white border-snow-300 border-[1px] hover:bg-snow-100 active:bg-snow-300 text-charcoal-900",
     busy: "active:!bg-white hover:!bg-white",
-    disabled: "!bg-neutral-100 hover:!bg-neutral-100 active:!bg-neutral-100",
+    disabled:
+      "!bg-snow-100 hover:!bg-snow-100 active:!bg-snow-100 !text-charcoal-400",
   },
   dark: {
     default:
-      "bg-charcoal-500 hover:bg-charcoal-550 active:bg-charcoal-600 border-none border-[1px] text-white",
-    busy: "hover:!bg-charcoal-600 active:!bg-charcoal-600",
+      "bg-tar-500 hover:bg-tar-550 active:bg-tar-600 border border-neutral-500 text-white",
+    busy: "hover:!bg-tar-600 active:!bg-tar-600",
+    disabled: "!text-charcoal-100 !bg-tar-450 hover:!bg-tar-450 active:!bg-tar-450",
+  },
+};
+
+const variantStyles = {
+  danger: {
+    base: "!bg-red-700 hover:!bg-red-750 active:!bg-red-780 !text-white",
+    disabled: "!bg-red-780 hover:!bg-red-780 active:!bg-red-780 !text-white",
+  },
+  warning: {
+    base: "!bg-hot-yellow-500 hover:!bg-hot-yellow-550 active:!bg-hot-yellow-600 !text-charcoal-900",
     disabled:
-      "!text-charcoal-100 !bg-charcoal-500 hover:!bg-charcoal-500 active:!bg-charcoal-500",
+      "!bg-hot-yellow-600 hover:!bg-hot-yellow-600 active:!bg-hot-yellow-600 !text-charcoal-900",
   },
 };
 
@@ -34,7 +46,7 @@ const Button = (props: ButtonProps) => {
     ...otherProps
   } = props;
 
-  const { theme, variant } = useTheme();
+  const { theme } = useTheme();
   const colors = styles[theme];
 
   return (
@@ -43,22 +55,20 @@ const Button = (props: ButtonProps) => {
         styles.base,
         colors.default,
         disabled && colors.disabled,
-        variant === "round" && "rounded-md",
+        "!rounded",
         prefix && "flex gap-1 items-center",
         (disabled || busy) && "cursor-not-allowed",
         !actionType && busy ? colors.disabled : "",
-        actionType === "danger" &&
-          "!bg-red-700 hover:!bg-red-750 active:!bg-red-780 !text-white",
-        actionType === "warning" &&
-          "!bg-yellow-800 hover:!bg-yellow-850 active:!bg-yellow-880 !text-charcoal-900",
+        actionType === "danger" && variantStyles.danger.base,
+        actionType === "warning" && variantStyles.warning.base,
 
         actionType === "danger" &&
           (disabled || busy) &&
-          "!bg-red-780 hover:!bg-red-780 active:!bg-red-780 !text-white",
+          variantStyles.danger.disabled,
 
         actionType === "warning" &&
           (disabled || busy) &&
-          "!bg-yellow-880 hover:!bg-yellow-880 active:!bg-yellow-880 !text-charcoal-900",
+          variantStyles.warning.disabled,
 
         additionalClassName,
       )}

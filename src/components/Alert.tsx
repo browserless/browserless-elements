@@ -13,7 +13,7 @@ const styles = {
     error: "text-red-800/80",
     success: "text-green-800/80 bg-green-400/20",
     warning: "bg-yellow-50/90 text-ochre-900",
-    info: "bg-blue-50/90 text-blue-900",
+    info: "bg-indigo-50 text-indigo-600",
   },
   dark: {
     error: "text-red-300",
@@ -38,7 +38,7 @@ const Alert = (props: AlertProps) => {
   return (
     <div
       className={classNames(
-        "border-[1px] rounded-md text-base w-full p-2 px-4 mb-4",
+        "border-[1px] rounded text-base w-full p-2 px-4 mb-4 !font-semibold",
         icon && "pl-3",
         type === "error" && "!bg-red-900/10 border-red-400/50 " + colors.error,
         type === "success" && "border-green-400/50 " + colors.success,
