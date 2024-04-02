@@ -6,6 +6,7 @@ import { classNames } from "../utils";
 
 import Button from "./Button";
 import BackArrowIcon from "./icons/BackArrow";
+import LogoGradient from "./icons/LogoGradient";
 import MenuIcon from "./icons/Menu";
 
 const styles = {
@@ -71,14 +72,7 @@ const Aside = (props: AsideProps) => {
         >
           <div className="w-full h-full border-none pt-[20%]">
             <div className="w-20 pointer-events-none flex self-center !my-0 !mx-auto">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://www.browserless.io/icons/icon-192x192.png"
-                height={100}
-                width={100}
-                className="mb-12"
-                alt=""
-              />
+              <LogoGradient className="mb-12 h-24 w-24" />
             </div>
             <div className="ml-4 lg:ml-2">{children}</div>
           </div>
