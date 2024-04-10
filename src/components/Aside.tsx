@@ -70,7 +70,7 @@ const Aside = (props: AsideProps) => {
           )}
           {...otherProps}
         >
-          <div className="w-full h-full border-none pt-[20%]">
+          <div className="w-full h-full border-none pt-[20%] short:pt-[10%]">
             <div className="w-20 pointer-events-none flex self-center !my-0 !mx-auto">
               <LogoGradient className="mb-12 h-24 w-24" />
             </div>
