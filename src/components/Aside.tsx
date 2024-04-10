@@ -16,7 +16,12 @@ const styles = {
 };
 
 const Aside = (props: AsideProps) => {
-  const { children, className: additionalClassName, ...otherProps } = props;
+  const {
+    children,
+    hideBurger,
+    className: additionalClassName,
+    ...otherProps
+  } = props;
   const [isActive, setActive] = React.useState(false);
   const mobileMenuRef = React.useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
@@ -43,16 +48,22 @@ const Aside = (props: AsideProps) => {
 
   return (
     <div ref={mobileMenuRef}>
-      <div
-        className={classNames(
-          "flex justify-start mt-5 ml-5 fixed z-[60]",
-          "md:!block hidden",
-        )}
-      >
-        <Button onClick={() => setActive(!isActive)}>
-          <Icon className="!w-5 !h-6" />
-        </Button>
-      </div>
+      {/* Burger Button */}
+      {!hideBurger && (
+        <div
+          className={classNames(
+            "flex justify-start mt-5 ml-5 fixed z-[60]",
+            "md:!block hidden",
+          )}
+        >
+          <Button onClick={() => setActive(!isActive)}>
+            <Icon className="!w-5 !h-6" />
+          </Button>
+        </div>
+      )}
+
+      {/* Actual Aside Navbar */}
+
       <div className={classNames(isActive ? "md:!block" : "md:!hidden", "block")}>
         <div
           className={classNames(
@@ -83,4 +94,6 @@ const Aside = (props: AsideProps) => {
 };
 
 export default Aside;
-export type AsideProps = React.HTMLProps<HTMLDivElement>;
+export interface AsideProps extends React.HTMLProps<HTMLDivElement> {
+  hideBurger?: boolean;
+}
