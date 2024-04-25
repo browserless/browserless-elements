@@ -6,14 +6,13 @@ import { classNames } from "../utils";
 const styles = {
   base: "text-[12pt] border-none my-2 py-2 cursor-pointer hover:rounded ml-3 mr-7 h-8 flex lg:!ml-0 lg:!mr-2 md:mr-7 md:h-8 font-medium",
   light: {
-    default: "hover:bg-[#eaeaea] text-charcoal-500",
-    selected: "!text-charcoal-800 !font-bold rounded bg-[#eaeaea]",
+    default: "hover:text-tar-800 text-charcoal-500",
+    selected: "!text-hot-pink-600 !font-bold rounded",
     loading: "bg-[#eaeaea]",
   },
   dark: {
-    default: "!text-charcoal-100 hover:!bg-charcoal-600",
-    selected:
-      "!text-white !font-bold rounded !bg-charcoal-600 hover:bg-charcoal-600",
+    default: "!text-charcoal-100 hover:!text-white",
+    selected: "!text-hot-yellow-300 !font-bold rounded",
     loading: "bg-charcoal-600",
   },
 };

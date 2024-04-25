@@ -25,11 +25,11 @@ const Aside = (props: AsideProps) => {
   const [isActive, setActive] = React.useState(false);
   const mobileMenuRef = React.useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
+
   const colors = styles[theme];
 
   const Icon = isActive ? BackArrowIcon : MenuIcon;
   const handler = () => {
-    console.log("Setting active to false");
     setActive(false);
   };
 

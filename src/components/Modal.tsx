@@ -56,7 +56,7 @@ const Modal = (props: ModalProps) => {
         className="fixed z-40 w-screen h-screen bg-black/40"
         onClick={closeOnBackdropClick ? handleClose : undefined}
         onKeyUp={(event) => {
-          if (event.key === "Escape" && !closeOnEsc) onClose();
+          if (event.key === "Escape" && closeOnEsc && onClose) onClose();
         }}
       ></div>
     </div>
@@ -66,7 +66,7 @@ const Modal = (props: ModalProps) => {
 export default Modal;
 export interface ModalProps extends Omit<React.HTMLProps<HTMLDivElement>, "width"> {
   show?: boolean;
-  onClose: Function;
+  onClose?: Function;
   closeOnBackdropClick?: boolean;
   closeOnEsc?: boolean;
   width?: string;

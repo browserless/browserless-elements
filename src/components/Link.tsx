@@ -11,7 +11,7 @@ const Page = (props: PageProps) => {
     <a
       className={classNames(
         "no-underline",
-        theme === "light" ? "text-hot-pink-500" : "text-hot-yellow-500",
+        theme === "light" ? "text-hot-pink-500" : "text-hot-pink-300",
         additionalClassName,
       )}
       {...otherProps}

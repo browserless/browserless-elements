@@ -12,17 +12,10 @@ const ThemeProvider = (props: ThemeProviderProps) => {
   const { children } = props;
   const deviceTheme = useDeviceTheme();
 
-  const [theme, setTheme] = React.useState({
+  const theme = {
     theme: props.theme || deviceTheme,
     variant: props.variant || defaultTheme.variant,
-  });
-
-  React.useEffect(() => {
-    setTheme({
-      theme: props.theme || deviceTheme,
-      variant: props.variant || defaultTheme.variant,
-    });
-  }, [props, deviceTheme]);
+  };
 
   return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>;
 };

@@ -1,3 +1,6 @@
+/**
+ * Components
+ */
 export { default as Alert } from "./components/Alert";
 export { default as Aside } from "./components/Aside";
 export { default as AsideItem } from "./components/AsideItem";
@@ -15,6 +18,13 @@ export { default as TextArea } from "./components/TextArea";
 export { default as Toggle } from "./components/Toggle";
 export { classNames } from "./utils";
 
+/**
+ * Hooks
+ */
 export { default as useTheme } from "./hooks/useTheme";
+export { default as useDeviceTheme } from "./hooks/useDeviceTheme";
 
+/**
+ * Providers
+ */
 export { default as ThemeProvider, ThemeContext } from "./providers/ThemeProvider";

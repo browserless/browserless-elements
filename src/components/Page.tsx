@@ -11,6 +11,8 @@ const Page = (props: PageProps) => {
     <div
       className={classNames(
         additionalClassName,
+        "brwl-page",
+        theme,
         "max-w-[1441px] flex flex-col items-center ml-[250px] p-8 min-w-[calc(100vw-250px)] !min-h-screen !h-fit",
         "lg:ml-[175px] md:!ml-0",
         theme === "light"
