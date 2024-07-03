@@ -96,7 +96,6 @@ body * > *::-webkit-scrollbar-thumb {
   border-radius: 9999px;
 }
 
-
 input.dark.toggle-cb:checked {
   @apply bg-green-800/80;
 }
@@ -110,5 +109,23 @@ input.toggle-cb:checked ~ span:last-child {
 }
 
 .toggle-cb + span {
-  box-shadow: rgba(0, 0, 0, 0.20) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+}
+
+details.brwl-details summary::marker {
+  display: none;
+  content: ""
+}
+
+details.brwl-details {
+  transition: height 0.333s ease;
+  overflow: hidden;
+}
+
+details.brwl-details:not([open]) {
+  height: 1.25em;
+}
+
+details.brwl-details[open] {
+  height: 3em;
 }

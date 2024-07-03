@@ -1,6 +1,7 @@
 /**
  * Components
  */
+export { default as Accordion } from "./components/Accordion";
 export { default as Alert } from "./components/Alert";
 export { default as Aside } from "./components/Aside";
 export { default as AsideItem } from "./components/AsideItem";

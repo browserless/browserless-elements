@@ -6,7 +6,11 @@ import { classNames } from "../utils";
 
 import { Asterisk } from "./icons/Asterisk";
 
-const Chevron = ({ className: additionalClassName }: { className?: string }) => {
+export const Chevron = ({
+  className: additionalClassName,
+}: {
+  className?: string;
+}) => {
   return (
     <svg
       className={additionalClassName}
